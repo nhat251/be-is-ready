@@ -13,7 +13,6 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/FinMateApplication/**")
                 .allowedOrigins("https://test-deploy-fe-vert.vercel.app")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("*")
-                .allowCredentials(true); // nếu không dùng cookie, có thể bỏ dòng này
+                .allowedHeaders("*");
     }
 }
