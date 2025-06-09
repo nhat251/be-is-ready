@@ -15,7 +15,7 @@ public class SetFinancialGoalController {
     private GoalService goalService;
 
     @PostMapping
-    public ResponseEntity<ApiResponse<GoalResponse>> createGoal(@RequestBody CreateGoalRequest request, @RequestHeader(name = "userId") Integer userId) {
+    public ResponseEntity<ApiResponse<GoalResponse>> createGoal(@RequestBody CreateGoalRequest request, @RequestHeader(name = "userId", defaultValue = "6") Integer userId) {
         request.setUserId(userId);
         GoalResponse goal = goalService.createFinancialGoal(request);
         ApiResponse<GoalResponse> apiResponse = new ApiResponse<>();
