@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/FinMateApplication/**")
+        registry.addMapping("https://be-is-ready.onrender.com/FinMateApplication/*")
                 .allowedOrigins("https://test-deploy-fe-vert.vercel.app/front_end")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
     }
