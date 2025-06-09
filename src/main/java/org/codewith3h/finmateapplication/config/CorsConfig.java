@@ -9,7 +9,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/FinMateApplication/**")
-            .allowedOrigins("https://test-deploy-fe-vert.vercel.app/") // đổi thành URL FE thật
-            .allowedMethods("*");
+                .allowedOrigins("https://test-deploy-fe-vert.vercel.app/front_end")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
     }
 }
