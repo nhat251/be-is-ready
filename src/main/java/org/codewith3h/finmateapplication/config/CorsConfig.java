@@ -8,10 +8,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+        System.out.println("⚙️ CorsConfig initialized...");
+
         registry.addMapping("/FinMateApplication/**")
                 .allowedOrigins("https://test-deploy-fe-vert.vercel.app")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(true); // nếu có sử dụng cookie/token
+                .allowCredentials(true); // nếu không dùng cookie, có thể bỏ dòng này
     }
 }
